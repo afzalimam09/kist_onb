@@ -1,0 +1,130 @@
+.login {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.login .form-wrapper {
+    max-width: 34rem;
+    background-color: aliceblue;
+    padding: 2.5rem;
+    border-radius: var(--radius-6);
+    margin: 0 auto;
+    margin-top: 6rem;
+}
+
+.login .form-text {
+    margin-block-end: 15px;
+}
+
+.login .form-content label {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 6px;
+    color: var(--black_80);
+}
+
+.login .form-content label span {
+    color: var(--tart-orange);
+    font-size: 20px;
+}
+
+.login .input-wrapper {
+    position: relative;
+    background-color: var(--white);
+    border-radius: var(--radius-6);
+}
+
+
+
+.login .input-field {
+    background-color: var(--white);
+    color: inherit;
+    height: 50px;
+    padding-inline: 30px 10px;
+    border-radius: var(--radius-6);
+    margin-block-end: 10px;
+    width: 87%;
+    outline: none;
+}
+
+.login .input-wrapper select {
+    width: 100%;
+    border: none;
+    margin-block-end: 0px;
+}
+
+.login .input-wrapper.select-box {
+    margin-bottom: 10px;
+}
+
+.login .input-wrapper select option {
+    font-size: 18px;
+    font-weight: var(--fw-500);
+}
+
+.login .input-wrapper ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    --ionicon-stroke-width: 40px;
+}
+
+.login .view-password {
+    color: var(--old-lavender);
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    --ionicon-stroke-width: 40px;
+} 
+
+.login .view-password ion-icon {
+    cursor: pointer;
+    pointer-events: visible;
+}
+
+.login .forgot-password {
+    float: right;
+    margin-bottom: 10px;
+    color: var(--ultramarine-blue);
+}
+
+.login .login_btn {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-size: var(--fs-5);
+    font-weight: var(--fw-700);
+    padding: 7px 0;
+    border-radius: var(--radius-6);
+    transition: var(--transition-1);
+}
+
+.login .login_btn.disabled {
+    background-color: gray;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.login .cta {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.login .cta p {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.login .cta .a {
+    font-weight: 500;
+    color: var(--ultramarine-blue);
+}
+
+

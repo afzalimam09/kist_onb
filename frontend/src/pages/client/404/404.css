@@ -1,0 +1,22 @@
+.not-found h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.page-not-found {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.page-not-found p {
+    margin-top: 15px;
+}
+
+.page-not-found .goback {
+    color: var(--ultramarine-blue);
+    margin-top: 25px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

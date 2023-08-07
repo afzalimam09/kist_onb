@@ -1,0 +1,41 @@
+.notification {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.notification .wrapper {
+    margin-top: 50px;
+}
+
+.notification .single-notification {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.notification .single-notification .top {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.notification .single-notification .top .tag {
+    background-color: var(--ultramarine-blue);
+    padding: 3px 7px;
+    border-radius: var(--radius-4);
+    color: var(--white);
+}
+.notification .single-notification .top .tag.dismis {
+    cursor: pointer;
+}
+
+
+.notification .single-notification .content {
+    margin-top: 7px;
+}
+
+

@@ -1,0 +1,73 @@
+.single-notice {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.single-notice .notice-card {
+    margin-top: 50px;
+    background-color: var(--white);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.single-notice .notice-card .card-banner {
+    background-color: var(--light-gray);
+    aspect-ratio: 370 / 270;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.single-notice .notice-card .card-banner .img-cover {
+    object-fit: fill;
+    max-width: 592px;
+}
+
+.single-notice .notice-card .card-content .date-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ultramarine-blue);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-600);
+    margin-bottom: 15px;
+}
+
+.single-notice .notice-card .card-content .h3 {
+    margin-bottom: 15px;
+}
+
+.single-notice .notice-card .card-content .desc {
+    margin-bottom: 12px;
+}
+
+.single-notice .notice-card .card-action {
+    display: flex;
+    gap: 15px;
+}
+
+.single-notice .notice-card .card-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: var(--radius-4);
+    transition: var(--transition-1);
+    margin-bottom: 15px;
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+
+@media (min-width: 792px) {
+    .single-notice .notice-card {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,13 @@
+.bookmark h2 {
+    margin-top: 50px;
+}
+
+.bookmark-not-found {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.bookmark-not-found .url {
+    color: var(--ultramarine-blue);
+    margin-top: 20px;
+}

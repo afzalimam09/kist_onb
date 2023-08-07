@@ -1,0 +1,133 @@
+
+
+.notice {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.notice .section-title {
+    text-align: center;
+}
+
+.notice .grid-list {
+    margin-block: 60px;
+}
+
+.notice .notice-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+    padding: 15px;
+}
+
+.notice .notice-card .card-banner {
+    background-color: var(--light-gray);
+    aspect-ratio: 370 / 270;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.notice .notice-card .card-banner img {
+    transition: var(--transition-2);
+}
+
+.notice .notice-card:is(:hover, :focus-within) .card-banner img {
+    transform: scale(1.1);
+}
+
+.notice .notice-card .card-content {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.notice .notice-card .card-title {
+    line-height: 1.6;
+    transition: var(--transition-1);
+}
+
+.notice .notice-card .card-title:is(:hover, :focus) {
+    color: var(--ultramarine-blue);
+}
+
+
+.notice .notice-card .tag-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notice .notice-card .people-icon {
+    font-size: 18px;
+}
+
+
+.notice .notice-card .branch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.notice .notice-card .date-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--white);
+    color: var(--ultramarine-blue);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-600);
+    border-radius: var(--radius-4);
+}
+
+
+.notice .notice-card .card-footer {
+    padding-top: 15px;
+    border-block-start: 1px solid var(--cultured-2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.notice .notice-card .card-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: var(--radius-4);
+    transition: var(--transition-1);
+}
+
+.notice .btn-load-more {
+    margin-inline: auto;
+    background-color: var(--ultramarine-blue);
+    color: white;
+}
+
+.notice .btn-load-more.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: var(--space-cadet_20); 
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+
+/**
+ * responsive for larger than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+  :is(.notice) .grid-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

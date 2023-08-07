@@ -1,0 +1,228 @@
+
+.login-btn .span {
+    display: none;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-block: 20px;
+    z-index: 4;
+}
+
+.header.active {
+    background-color: var(--white);
+    box-shadow: var(--shadow-2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--ultramarine-blue);
+    font-size: 2.4rem;
+    font-weight: var(--fw-800);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-action-btn {
+    background-color: var(--white);
+    color: var(--ultramarine-blue);
+    padding: 12px;
+    border-radius: var(--radius-4);
+    box-shadow: var(--shadow-1);
+}
+
+.header-action-btn ion-icon {
+    --ionicon-stroke-width: 40px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background-color: var(--white);
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    visibility: hidden;
+    transition: 0.25s var(--cubic-in);
+}
+
+.navbar.active {
+    visibility: visible;
+    transform: translateX(300px);
+    transition: 0.5s var(--cubic-out);
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-block-end: 1px solid var(--cultured-2);
+}
+
+.navbar .logo {
+    font-size: 2.8rem;
+}
+
+.nav-close-btn {
+    background-color: var(--white);
+    color: var(--space-cadet-2);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-1);
+}
+
+.navbar-list {
+    padding: 15px 20px;
+}
+
+.navbar-item:not(:last-child) {
+    border-block-end: 1px solid var(--cultured-2);
+}
+
+.navbar-link {
+    font-weight: var(--fw-500);
+    padding-block: 8px;
+    transition: var(--transition-1);
+}
+
+.navbar-link:is(:hover, :focus) {
+    color: var(--ultramarine-blue);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--black_80);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-1);
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/* responsive for larger than 575px screen */
+@media (min-width: 575px) {
+    .header .container {
+            max-width: unset;
+        }
+}
+
+
+/* responsive for larger than 768px screen */
+@media (min-width: 768px) {
+
+    .header .container {
+        padding-inline: 30px;
+    }
+
+    .header-actions {
+        gap: 15px;
+    }
+
+    .header-action-btn:not(.login-btn) {
+        padding: 17px;
+    }
+
+    .login-btn .span {
+        display: block;
+    }
+
+    .login-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--ultramarine-blue);
+        color: var(--white);
+        min-height: 50px;
+        padding-inline: 25px;
+        font-weight: var(--fw-700);
+        transition: var(--transition-1);
+    }
+
+    .login-btn ion-icon {
+        --ionicon-stroke-width: 70px;
+    }
+
+    .login-btn:is(:hover, :focus) {
+        background-color: var(--space-cadet-2);
+    }
+}
+
+
+/* responsive for larger than 992px screen */
+@media (min-width: 1200px) {
+.nav-open-btn,
+    .navbar-top,
+    .overlay {
+        display: none;
+    }
+
+    .header {
+        padding-block: 40px;
+    }
+
+    .header.active {
+        padding-block: 15px;
+    }
+
+        .header.header-anim {
+            animation: slide-in 1s ease forwards;
+        }
+    
+        @keyframes slide-in {
+            0% {
+                transform: translateY(-100%);
+            }
+    
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+    .navbar,
+    .navbar.active {
+        all: unset;
+    }
+
+    .navbar-list {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .navbar-item:not(:last-child) {
+        border-block-end: none;
+    }
+
+    .navbar-link {
+        color: var(--space-cadet-2);
+        font-weight: var(--fw-600);
+        padding-inline: 10px;
+    }
+
+}
