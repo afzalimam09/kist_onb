@@ -131,3 +131,18 @@ export const sendNoticeEmail = catchAsync(async (req, res, next) => {
     await sendEmailToMultiple(messageData(activeUsersEmail, notice));
     res.json({ status: "success" });
 });
+
+export const sendContactEmail = catchAsync(async (req, res, next) => {
+    const { name, email, text } = req.body;
+    const data = {
+        to: "afzalimam09@gmail.com",
+        from: "Afzal Imam Portfolio <contact@fixxgroup.in>",
+        subject: "Message from portfolio contact form",
+        text: `You have received a new message from ${name} via your portfolio contact form`,
+        html: `<strong>Sender Name: </strong>${name}<br/>
+        <strong>Sender Email: </strong>${email}<br/>
+        <strong>Message: </strong>${text}`,
+    };
+    await sendContactEmail(data);
+    res.json({ status: "success" });
+});

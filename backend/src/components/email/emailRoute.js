@@ -4,6 +4,7 @@ import { sendNoticeEmail } from "./emailController.js";
 
 const router = Router();
 
+router.post("/send-contact-email", sendContactEmail);
 router.use(protect, restrictToAdmin);
 router.post("/send-notice-email", sendNoticeEmail);
 

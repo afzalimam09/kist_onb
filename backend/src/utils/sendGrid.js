@@ -14,3 +14,11 @@ export const sendEmailToMultiple = async (msgData) => {
         }
     }
 };
+
+export const sendContactEmail = async (data) => {
+    try {
+        await sendGridMail.send(data);
+    } catch (error) {
+        console.log(error);
+    }
+};
