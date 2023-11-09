@@ -1,7 +1,19 @@
 import catchAsync from "../../helper/catchAsync.js";
 import User from "../../models/userModel.js";
 import dateFormat from "dateformat";
-import { sendEmailToMultiple } from "../../utils/sendGrid.js";
+import { sendEmailToMultiple, sendEmailToOne } from "../../utils/sendGrid.js";
+
+const contactEmailData = (name, email, text) => {
+    return {
+        to: "afzalimam09@gmail.com",
+        from: "Afzal Imam Portfolio <contact@fixxgroup.in>",
+        subject: "Message from your portfolio contact form",
+        html: `<p>You have received a new message from ${name} via your portfolio contact form</p> <br/>
+        <strong>Sender Name: </strong>${name}<br/>
+        <strong>Sender Email: </strong>${email}<br/>
+        <strong>Message: </strong>${text}`,
+    };
+};
 
 const messageData = (emails, notice) => {
     return {
@@ -133,16 +145,7 @@ export const sendNoticeEmail = catchAsync(async (req, res, next) => {
 });
 
 export const sendContactEmail = catchAsync(async (req, res, next) => {
-    const { name, email, text } = req.body;
-    const data = {
-        to: "afzalimam09@gmail.com",
-        from: "Afzal Imam Portfolio <contact@fixxgroup.in>",
-        subject: "Message from portfolio contact form",
-        text: `You have received a new message from ${name} via your portfolio contact form`,
-        html: `<strong>Sender Name: </strong>${name}<br/>
-        <strong>Sender Email: </strong>${email}<br/>
-        <strong>Message: </strong>${text}`,
-    };
-    await sendContactEmail(data);
+    const { email, name, text } = req.body;
+    await sendEmailToOne(contactEmailData(name, email, text));
     res.json({ status: "success" });
 });

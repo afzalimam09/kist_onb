@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { protect, restrictToAdmin } from "../auth/authController.js";
-import { sendNoticeEmail } from "./emailController.js";
+import { sendContactEmail, sendNoticeEmail } from "./emailController.js";
 
 const router = Router();
 

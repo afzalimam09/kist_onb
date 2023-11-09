@@ -15,10 +15,15 @@ export const sendEmailToMultiple = async (msgData) => {
     }
 };
 
-export const sendContactEmail = async (data) => {
+export const sendEmailToOne = async (data) => {
     try {
         await sendGridMail.send(data);
+        console.log("email sent successfully");
     } catch (error) {
-        console.log(error);
+        console.error("Error sending email");
+        console.error(error);
+        if (error.response) {
+            console.error(error.response.body);
+        }
     }
 };
